@@ -17,11 +17,13 @@ function toggleInfo() {
   if(!infoVisible){
     infoButton.html("Info");
     input.show();
-    button.show();
+    addButton.show();
+    deleteButton.show();
   }else{
     infoButton.html("Close");
     input.hide();
-    button.hide();
+    addButton.hide();
+    deleteButton.hide();
   }
 }
 
@@ -41,24 +43,24 @@ function createInputForm() {
     }
   });
   
-  addButton = createButton('➕');
-  addButton.position(input.x + input.width-addButton.width*2-9, input.y);
+  addButton = createButton('Add');
+  addButton.position(input.x + input.width-addButton.width*2-8, input.y);
   addButton.mousePressed(()=>{
     addNode(input.value())
   });
-  addButton.style('font-size', '14px');
+  addButton.style('font-size', '16px');
   addButton.style('padding', '9px 16px');
   addButton.style('border', 'none');
   addButton.style('border-radius', '4px');
-  addButton.style('background-color', '#4CAF50');
+  addButton.style('background-color', primaryColor);
   addButton.style('color', 'white');
   
-  deleteButton = createButton('➖');
+  deleteButton = createButton('Del');
   deleteButton.position(addButton.x + addButton.width + 10, addButton.y); 
   deleteButton.mousePressed(() => {
     removeNode(input.value());
   });
-  deleteButton.style('font-size', '14px');
+  deleteButton.style('font-size', '16px');
   deleteButton.style('padding', '9px 16px');
   deleteButton.style('border', 'none');
   deleteButton.style('border-radius', '4px');
